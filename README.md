@@ -8,6 +8,8 @@ This UserScript modifies the duolingo webpage background by drawing a flag assoc
 
 ![Sample norwegian flag](sample-norsk.png)
 
+Based on [Thomas de Roo's UserScript from 2015](https://www.duolingo.com/comment/7211430), which was outdated and no longer works on duolingo.
+
 ### Usage:
 
 1. Install the Greasemonkey add-on on Firefox or the Tampermonkey add-on on Chrome.
@@ -15,3 +17,9 @@ This UserScript modifies the duolingo webpage background by drawing a flag assoc
 3. Enjoy!
 
 PD. You can use any image you want for each of your languages. Just modify the link on the script code.
+
+
+
+### TO DO:
+
+- Make sure the background works everywhere.
