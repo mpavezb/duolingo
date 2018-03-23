@@ -8,6 +8,8 @@
 // @grant    none
 // @match        *://www.duolingo.com/*
 // @require https://code.jquery.com/jquery-3.3.1.min.js
+// @downloadURL  https://raw.githubusercontent.com/mpavezb/duolingo/master/duolingo_background_flags.user.js
+// @updateURL    https://raw.githubusercontent.com/mpavezb/duolingo/master/duolingo_background_flags.user.js
 // ==/UserScript==
 
 /*
