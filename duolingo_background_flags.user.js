@@ -70,23 +70,47 @@ function doFlag(){
         var language = data.learning_language;
         var language_full = data.learning_language_string;
 
+        // set background
         if (language in flags) {
             console.log('[Userscript - Duolingo Flag Background] Setting background for language "' + language_full + '".');
             $("body").css("background", "url(" + flags[language] + ")");
             $("body").css("background-size", "100%");
             $("body").css("background-repeat", "no-repeat");
             $("body").css("background-attachment", "fixed");
-
-            // footer adjustments
-            $(".nav-footer").css("text-shadow", "1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000");
-            $(".nav-footer a").css("color", "white");
         } else {
             // defaults to none
             console.log('[Userscript - Duolingo Flag Background] Setting background to empty');
             $("body").css("background", "");
         }
 
-        console.log('[Userscript - Duolingo Flag Background] Done.');
+        // footer adjustments
+        if ( $(".nav-footer").length ) {
+            // modify footer for duolingo.com/comment/<> views.
+            // (Use .nav-footer)
+            console.debug('[Userscript - Duolingo Flag Background] setting footer for comments.');
+            $(".nav-footer").css("background", "white");
+            $(".nav-footer").css("border-radius", "10px");
+        } else {
+            // modify footer for duolingo.com/<> views.
+            // Based on /info hrefs (use the last one)
+            console.debug('[Userscript - Duolingo Flag Background] setting footer for common views.');
+            var infoNodes = document.querySelectorAll("ul > li > a[href='/info']");
+            if (infoNodes.length > 0) {
+                var infoNode = infoNodes[infoNodes.length-1];
+                var footerNode = infoNode.parentNode.parentNode;
+                footerNode.className = footerNode.className.replace(" script_duo_flag_footer", "");
+                footerNode.className += " script_duo_flag_footer";
+
+                $(".script_duo_flag_footer").css("background", "none");
+                $(".script_duo_flag_footer").css("text-shadow", "1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000");
+                $(".script_duo_flag_footer a").css("color", "white");
+                // $(".script_duo_flag_footer").css("border-radius", "10px");
+                // $(".script_duo_flag_footer").css("padding-right","0px");
+                // $(".script_duo_flag_footer").css("padding-left","0px");
+            } 
+        }
+        
+        console.debug('[Userscript - Duolingo Flag Background] applied.');
     });
 }
 
