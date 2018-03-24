@@ -17,9 +17,3 @@ Based on [Thomas de Roo's UserScript from 2015](https://www.duolingo.com/comment
 3. Enjoy!
 
 PD. You can use any image you want for each of your languages. Just modify the link on the script code.
-
-
-
-### TO DO:
-
-- Make sure the background works everywhere.
