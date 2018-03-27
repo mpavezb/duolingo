@@ -23,6 +23,8 @@ Usability:
 - Adapts to different screen sizes:
 	- Full screen
 	- Middle size
+	- Dont apply to small wide screens
+	- Zooming
 - Browser support: Firefox, Chrome
 
 
